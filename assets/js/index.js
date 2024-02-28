@@ -194,7 +194,7 @@ function authSignInWithEmail() {
     })
     .catch((error) => {
       console.error(error.message)
-      alert('verificar login/senha')
+      alert('Usuário ou senha não conferem')
     })
 }
 
@@ -208,7 +208,8 @@ function authCreateAccountWithEmail() {
       clearAuthFields()
     })
     .catch((error) => {
-      console.error(error)
+      alert(error.code.includes('already-in-use') && 'Já xiste um email com essa conta')
+      console.error(error.message)
       // ..
     })
 
@@ -445,14 +446,29 @@ function createPostUpdateButton(wholeDoc){
 
   
   const button = document.createElement('button')
-  button.textContent = "Edit"
+  button.innerHTML = `<i class="ph ph-pencil"></i>`
   button.classList.add('edit-color')
-  button.addEventListener("click", function(){    
-    const newBody = prompt("Edit the post", postData.body)
 
-    if(newBody) {
-      updatePostInDB(postId, newBody)
+  button.addEventListener("click", async function(){    
+
+    const { value: text } = await Swal.fire({
+      input: "textarea",
+      inputLabel: "Message",
+      inputPlaceholder: "Type your message here...",
+      inputValue: postData.body,
+      inputAttributes: {
+        "aria-label": "Type your message here",
+                
+      },
+      showCancelButton: true
+    });
+
+    if (text) {      
+      updatePostInDB(postId, text)
     }
+
+
+
   })
 
   return button
@@ -466,10 +482,29 @@ function createPostDeleteButton(wholeDoc) {
       <button class="delete-color">Delete</button>
   */
   const button = document.createElement('button')
-  button.textContent = 'Delete'
+  button.innerHTML = '<i class="ph ph-trash-simple"></i>'
   button.classList.add("delete-color")
   button.addEventListener('click', function() {
-      deletePostFromDB(postId)
+       
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        deletePostFromDB(postId)
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your post  has been deleted.",
+          icon: "success"
+        });
+      }
+    });
       
   })
   return button
@@ -537,8 +572,15 @@ function postButtonPressed() {
     resetAllMoodElements(moodEmojiEls)
   } else {
     console.error('checkout inputFields')
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Está faltando alguma coisa",
+    });
   }
 }
+
+
 
 function clearAll(element) {
   element.innerHTML = ''

@@ -22,8 +22,10 @@
 
   --element-padding: 0.8em;
 
-  --maximum-width: 520px;
+  --maximum-width: 320px;
+  
 }
+
 
 html,
 body {
@@ -82,6 +84,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  margin-top: 1rem;
 }
 
 /* === User Section === */
@@ -267,7 +270,7 @@ nav.user_dashboard {
 }
 
 .ph{
- font-size: 2em;
+ font-size: 1.4em;
 }
 
 
@@ -291,6 +294,10 @@ nav.user_dashboard {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+   @media (min-width:500px){
+    max-width: 600px;    
+  }
 }
 
 #logged-out-view  {
@@ -462,3 +469,23 @@ footer.footer{
   
 }
 
+#warning{
+  background-color: #747e79;
+  position: absolute;
+  top: 50%;
+}
+
+
+/* Sweet Alert Custom Colors */
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{
+  background-color: var(--post-color) !important;
+  color: #000000;
+}
+
+div:where(.swal2-container).swal2-center>.swal2-popup {
+  background-color: var(--secondary-color);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
+}
+div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+  background-color: var(--delete-color)!important;
+}

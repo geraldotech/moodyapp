@@ -7,6 +7,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
 
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
       <script src="https://unpkg.com/@phosphor-icons/web"></script>
       
     <title>The Moody Zone: Understanding Feelings</title>
@@ -78,7 +80,7 @@
         <nav class="user_dashboard">       
           <button
             id="updateinfo"
-            title="update"
+            title="Update profile"
             class="icon-btn">         
             <i class="ph ph-user"></i>
           </button>
@@ -146,7 +148,8 @@
             Amazing
           </button>
         </div>
-
+        <div id="warning"></div>
+        
         <div class="post-section">
           <textarea
             id="post-input"

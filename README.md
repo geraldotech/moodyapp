@@ -17,7 +17,15 @@ $ npm install
 $ npm start
 ```
 
+Netfily Deploy: do not build
+
 Deploy in https://firebasemood.netlify.app/
+
+
+
+
+
+
 
 - Get Started FireStore
   https://firebase.google.com/docs/firestore/quickstart#initialize
