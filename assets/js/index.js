@@ -71,6 +71,14 @@ const filterButtonEls = document.getElementsByClassName("filter-btn")
 
 const postsEl = document.getElementById('posts')
 
+const updateinfo = document.getElementById('updateinfo')
+const updateInputs = document.getElementsByClassName('update_inputs')
+
+updateinfo.onclick = () => {
+  updateInputs[0].classList.toggle('updateInputsShow')
+  console.log(`click`)
+}
+
 /* == UI - Event Listeners == */
 
 signInWithGoogleButtonEl.addEventListener('click', authSignInWithGoogle)

@@ -6,6 +6,9 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+
+      <script src="https://unpkg.com/@phosphor-icons/web"></script>
+      
     <title>The Moody Zone: Understanding Feelings</title>
     <meta
       name="viewport"
@@ -71,14 +74,20 @@
 
     <section id="logged-in-view">
       <div class="container">
-        <nav>
+
+        <nav class="user_dashboard">       
+          <button
+            id="updateinfo"
+            title="update"
+            class="icon-btn">         
+            <i class="ph ph-user"></i>
+          </button>
+       
           <button
             id="sign-out-btn"
             title="Sign out"
             class="icon-btn">
-            <img
-              src="assets/icons/icon-sign-out.svg"
-              class="icon-img-btn" />
+              <i class="ph ph-sign-out"></i>
           </button>
         </nav>
 
@@ -88,7 +97,7 @@
             <h2 id="user-greeting"></h2>
           </div>
 
-          <div class="update">
+          <div class="update_inputs">
             <input
             id="display-name-input"
             type="text"

@@ -120,6 +120,7 @@ section {
 
 .mood-emojis {
   display: flex;
+  margin-top: 1rem;
 }
 
 .mood-emoji-btn {
@@ -256,11 +257,30 @@ section {
 
 /* === Nav === */
 
-nav {
+nav.user_dashboard {
   margin: 0.6em 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  gap: 1rem;
+
+}
+
+.ph{
+ font-size: 2em;
+}
+
+
+.update_inputs input{
+  margin-block: 8px;
+}
+
+.update_inputs{
+  display: none;
+  
+}
+.updateInputsShow {
+  display: block;
 }
 
 /* === Structure === */
@@ -441,3 +461,4 @@ footer.footer{
   text-align: center;
   
 }
+
