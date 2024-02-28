@@ -293,7 +293,7 @@ nav.user_dashboard {
   width: 100%;
 }
 
-#logged-out-view .container {
+#logged-out-view  {
   gap: 1em;
   flex: 1;
 }
