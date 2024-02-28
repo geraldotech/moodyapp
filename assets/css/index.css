@@ -22,7 +22,7 @@
 
   --element-padding: 0.8em;
 
-  --maximum-width: 320px;
+  --maximum-width: 520px;
 }
 
 html,
@@ -36,7 +36,11 @@ body {
   color: var(--dark-color);
   background-color: var(--secondary-light-color);
   font-family: var(--primary-font);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 
 /* === Typography === */
 
@@ -55,6 +59,16 @@ h3 {
 .app-title {
   font-family: var(--seconday-font);
   font-size: 2.5em;
+  text-align: center;
+}
+
+.logo img{
+  border-radius: 50%;
+  max-width: 30%;
+  
+}
+
+figure:has(img) {
   text-align: center;
 }
 
@@ -88,6 +102,9 @@ section {
 
 .user-section h2 {
   font-size: 1.2em;
+}
+.update{
+  display: none;
 }
 
 /* === Post Section === */
@@ -203,6 +220,9 @@ section {
   font-size: 0.9em;
   line-height: 1.3em;
 }
+.post p > img {
+  display: block;
+}
 
 /* = Posts Section - Posts - Footer = */
 
@@ -210,6 +230,7 @@ section {
   display: flex;
   align-self: flex-start;
   gap: 0.4em;
+  margin-top: 1rem;
 }
 
 .post .footer button {
@@ -253,7 +274,8 @@ nav {
 }
 
 #logged-out-view .container {
-  gap: 2em;
+  gap: 1em;
+  flex: 1;
 }
 
 .app-container {
@@ -411,4 +433,11 @@ button:hover {
 #logged-in-view {
   display: none;
   margin: 0;
+}
+
+footer.footer{
+  background-color: var(--secondary-color);
+  padding: 5vh;
+  text-align: center;
+  
 }
