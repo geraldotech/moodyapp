@@ -208,7 +208,7 @@ function authCreateAccountWithEmail() {
       clearAuthFields()
     })
     .catch((error) => {
-      alert(error.code.includes('already-in-use') && 'Já xiste um email com essa conta')
+      alert(error.code.includes('already-in-use') && 'Já existe um email com essa conta')
       console.error(error.message)
       // ..
     })

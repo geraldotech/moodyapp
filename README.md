@@ -9,8 +9,15 @@ Read Posts
 Update Posts
 Delete Posts
 
-Sigin with Google ou create a account
-post support html tags
+- Microblogging
+- Sigin with Google ou create a account
+- post text: how are you feeling?
+- support html tags like
+
+- LIBS
+  - CSS Animations
+  - Sweet Alert
+  - phosphor
 
 ```
 $ npm install
@@ -20,10 +27,6 @@ $ npm start
 Netfily Deploy: do not build
 
 Deploy in https://firebasemood.netlify.app/
-
-
-
-
 
 
 

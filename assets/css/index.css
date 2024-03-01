@@ -119,6 +119,7 @@ section {
   margin-top: 1rem;
 }
 
+
 /* == Post Section - Mood Emojis == */
 
 .mood-emojis {
@@ -226,6 +227,8 @@ section {
 }
 .post p > img {
   display: block;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 /* = Posts Section - Posts - Footer = */
